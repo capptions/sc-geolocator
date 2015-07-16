@@ -3,7 +3,7 @@ sc-geolocator
 
 Polymer 1.0 element that offers geolocation, based on https://github.com/onury/geolocator
 
-`sc-geolocator` is an invisible element that offers a couple of methods to detect the location of the user.
+`<sc-geolocator>` is an invisible element that offers a couple of methods to detect the location of the user.
 
 It uses both HTML5-geolocation (GPS / Wifi) if allowed by the user and supports fallback to IP-geo lookup.
 
@@ -13,14 +13,27 @@ It uses both HTML5-geolocation (GPS / Wifi) if allowed by the user and supports 
 - Full address information (street, town, neighborhood, region, country, country code, postal code, etc...)
 - Fallback mechanism (from HTML5-geolocation to IP-geo lookup)
 
-The element has the following public properties:
+## Getting started
 
-- `locating`: a boolean indicating if the element is currently busy retrieving the location
-- `location`: an object that contains the retrieved location
-- `fallbackToIP`: fallback to IP-geo lookup if HTML5-geolocation fails (`true`)
-- `timeout`: allowed time for HTML5-geolocation to happen (`6000`)
-- `maximumAge`: maximum age of the geolocation returned (`0`)
-- `enableHighAccuracy`: use high accuracy geolocation (`true`)
+### Install with bower
+
+First you need bower, [see their site](http://bower.io/) for details 
+
+```
+bower install --save sc-timeago
+```
+
+### Attributes
+
+| Attribute Name | Functionality  | Default |
+|----------------|-------------|-------------|
+| locating | a boolean indicating if the element is currently busy retrieving the location | |
+| location | an object that contains the retrieved location | `{}` |
+| fallbackToIP | fallback to IP-geo lookup if HTML5-geolocation fails | `true` |
+| timeout | allowed time for HTML5-geolocation to happen | `6000` |
+| maximumAge | maximum age of the geolocation returned | `0` |
+| enableHighAccuracy | use high accuracy geolocation | `true` |
+
 
 The element has one method called `locate` which needs to be fired without any arguments to start a new location lookup.
 
