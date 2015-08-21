@@ -20,7 +20,7 @@ It uses both HTML5-geolocation (GPS / Wifi) if allowed by the user and supports 
 First you need bower, [see their site](http://bower.io/) for details 
 
 ```
-bower install --save sc-timeago
+bower install --save sc-geolocator
 ```
 
 ### Attributes
