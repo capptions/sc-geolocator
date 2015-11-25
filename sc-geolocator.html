@@ -20,11 +20,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     is: 'sc-geolocator',
 
     properties: {
+
       location: {
         type: Object,
         value: {},
         notify: true
       },
+
       locating: {
         type: Boolean,
         value: false,
@@ -40,10 +42,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         type: Boolean,
         value: true
       },
+
       timeout: {
         type: Number,
         value: 6000
       },
+
       maximumAge: {
         type: Number,
         value: 0
@@ -52,26 +56,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
 
     locate: function () {
-      var self = this;
-
-      self.set('locating', true);
+      this.set('locating', true);
 
       window.geolocator.locate(function (location) {
 
-        self.set('locating', false);
-        self.set('location', location);
-        self.fire('success', location);
+        this.set('locating', false);
+        this.set('location', location);
+        this.fire('success', location);
+        this.fire('done');
 
-      }, function (err) {
+      }.bind(this), function (err) {
 
-        self.set('locating', false);
-        self.fire('error', err);
+        this.set('locating', false);
+        this.fire('error', err);
+        this.fire('done');
 
-      }, self.fallbackToIP, {
+      }.bind(this), this.fallbackToIP, {
 
-        enableHighAccuracy: self.enableHighAccuracy,
-        timeout: self.timeout,
-        maximumAge: self.maximumAge
+        enableHighAccuracy: this.enableHighAccuracy,
+        timeout: this.timeout,
+        maximumAge: this.maximumAge
 
       });
     }
