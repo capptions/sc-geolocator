@@ -1,3 +1,5 @@
+#### NO LONGER MAINTAINED: Use https://github.com/ebidel/geo-location instead!
+
 sc-geolocator
 ============
 
@@ -17,7 +19,7 @@ It uses both HTML5-geolocation (GPS / Wifi) if allowed by the user and supports 
 
 ### Install with bower
 
-First you need bower, [see their site](http://bower.io/) for details 
+First you need bower, [see their site](http://bower.io/) for details
 
 ```
 bower install --save sc-geolocator
